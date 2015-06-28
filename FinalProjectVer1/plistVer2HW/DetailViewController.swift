@@ -145,8 +145,6 @@ public class DetailViewController: UIViewController, UITextFieldDelegate, UIImag
   }
 
 
-
-
 // Fun with overloading:]
   func setupTextFields(shortVer: Int) -> String {
     self.lastNameTextField.delegate = self
@@ -165,6 +163,7 @@ public class DetailViewController: UIViewController, UITextFieldDelegate, UIImag
   public func textFieldShouldReturn(textField: UITextField) -> Bool {
     textField.resignFirstResponder()  // dismiss keyboard
 
+// Attempting to restore the detail image, late at night.
     println("This is the Last LastName textFieldShouldReturn: " + "\(lastPersonSelectedLastName)")
     switch lastPersonSelectedLastName {
     case "Woolley":
@@ -216,6 +215,7 @@ public class DetailViewController: UIViewController, UITextFieldDelegate, UIImag
       break
     }
 
+// Still trying. 
     println("This is the Last LastName textFieldDidEndEditing: " + "\(lastPersonSelectedLastName)")
     switch lastPersonSelectedLastName {
     case "Woolley":

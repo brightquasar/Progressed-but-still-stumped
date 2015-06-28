@@ -205,17 +205,9 @@ class ViewController: UIViewController, UITableViewDataSource {
     cell.personImageView.layer.borderColor = UIColor.blueColor().CGColor
 
     let personToDisplay = self.people[indexPath.row]
-    /*
-    // With optional binding (will add it back in -- if/when I decide to make immage an optionl in Person.swift)
-    /*if*/ let image = personToDisplay.image //{
-    cell.personImageView.image = image           // Set the image on the cell ************* HERE IS MY (potential) A.H.
-    // One could do the same in one line of code (if we are playing hard-ball, as we are, in this version) e.g. :
-    */  // Sans optional binding, and, on one line; 'cause that's how I roll.
 
-    cell.personImageView.image = personToDisplay.actualImage!
-
-    // The following line causes a crash. 
-    //self.selectedPerson.actualImage = personToDisplay.actualImage!  // This adds the image from the PhotoLibrary to the selectedPerson: Person!
+    // Will put-back optional binding on that next line, but not today.
+    cell.personImageView.image = personToDisplay.actualImage!  // Doubt this ever, works as intented.
 
     cell.firstNameLabel.text = personToDisplay.firstName   // Set the names on the cell.
     cell.lastNameLabel.text = personToDisplay.lastName    // These "always" work.
@@ -249,7 +241,7 @@ class ViewController: UIViewController, UITableViewDataSource {
   }
 */
 
-//  Sample code: (this seems to be a mess of illogically nested ... stuff, 3 in all), the above seems to be a better construct.
+//  Sample code: (this seems to be a mess of illogically nested ... stuff, 3 in all), the above seems to be a better construct??
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "ShowDetailViewController" {
       if let detailViewController = segue.destinationViewController as? DetailViewController {
@@ -271,22 +263,22 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
 /* But then who am I to judge, consider the following attempt:
 
-    // From DetailViewController.swift
+    // In the DetailViewController.swift file I tried:
 
     func lastPersonSelectedLastNameMember() {
-    var lastPersonSelectedLastName = "Tyson"
-    func lastName() -> String {
-    return "Tyson"
-    }
+      var lastPersonSelectedLastName = "Tyson"
+        func lastName() -> String {
+        return "Tyson"
+        }
     }
 
     // Then, in here we do:
+
     if DetailViewController.lastPersonSelectedLastNameMember.lastName == "Tyson" {
 
     }
-    // But Xcode says no, and is presumed to be right, this time.
+    // But Xcode says no and, is presumed to be right, this time.
 */
-    
 
   }
 
@@ -308,7 +300,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     return nil
   }
 
-  // The following (seems to be) a better construct. (by virtue of the use of chained optional bindings)
+  // The following (seems to be) a better construct. (by virtue of the use of chained optional bindings)??
 /*
   func loadFromArchive() -> [Person]? {
     if let archivePath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).last as? String, peopleFromArchive = NSKeyedUnarchiver.unarchiveObjectWithFile(archivePath + "/archive") as? [Person]
