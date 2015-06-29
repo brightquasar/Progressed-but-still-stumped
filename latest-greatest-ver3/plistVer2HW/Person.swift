@@ -42,7 +42,7 @@ class Person: NSObject, NSCoding  {
   func encodeWithCoder(aCoder: NSCoder) {
     aCoder.encodeObject(self.firstName, forKey: "firstName")
     aCoder.encodeObject(self.lastName, forKey: "lastName")
-    aCoder.encodeObject(self.lastName, forKey: "title")
+    aCoder.encodeObject(self.title, forKey: "title")
     aCoder.encodeObject(self.imageName, forKey: "imageName")
     aCoder.encodeObject(self.actualImage!, forKey: "actualImage")                 // Here.
   }
