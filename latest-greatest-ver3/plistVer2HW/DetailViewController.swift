@@ -100,88 +100,88 @@ public class DetailViewController: UIViewController, UITextFieldDelegate, UIImag
     case "Price (r)":
       let imageOfRobertPrice = UIImage(named: "RobertPrice")
       self.imageView.image = imageOfRobertPrice
-      lastPersonSelectedLastName = "Weinberg"
-      lastPersonSelectedFirstName = "Steven"
+      lastPersonSelectedLastName = "Price (r)"
+      lastPersonSelectedFirstName = "Robert"
     case "Gibson":
       let imageOfStevenGibson = UIImage(named: "StevenGibson")
       self.imageView.image = imageOfStevenGibson
-      lastPersonSelectedLastName = "Weinberg"
+      lastPersonSelectedLastName = "Gibson"
       lastPersonSelectedFirstName = "Steven"
     case "Randi":
       let imageOfRandiTheGreat = UIImage(named: "RandiTheGreat")
       self.imageView.image = imageOfRandiTheGreat
-      lastPersonSelectedLastName = "Weinberg"
-      lastPersonSelectedFirstName = "Steven"
+      lastPersonSelectedLastName = "Randi"
+      lastPersonSelectedFirstName = "James"
     case "deGrey":
       let imageOfdeGrey = UIImage(named: "AubreyDNJdeGrey")
       self.imageView.image = imageOfdeGrey
-      lastPersonSelectedLastName = "Weinberg"
-      lastPersonSelectedFirstName = "Steven"
+      lastPersonSelectedLastName = "deGrey"
+      lastPersonSelectedFirstName = "Aubrey"
     case "Barker":
       let imageOfDanBarker = UIImage(named: "DanBarker")
       self.imageView.image = imageOfDanBarker
-      lastPersonSelectedLastName = "Weinberg"
-      lastPersonSelectedFirstName = "Steven"
+      lastPersonSelectedLastName = "Barker"
+      lastPersonSelectedFirstName = "Daniel"
     case "Fresco":
       let imageOfJFresco = UIImage(named: "JFresco")
       self.imageView.image = imageOfJFresco
-      lastPersonSelectedLastName = "Weinberg"
-      lastPersonSelectedFirstName = "Steven"
+      lastPersonSelectedLastName = "Fresco"
+      lastPersonSelectedFirstName = "Jacque"
     case "Hitchens":
       let imageOfCHitchens = UIImage(named: "CHitchens")
       self.imageView.image = imageOfCHitchens
-      lastPersonSelectedLastName = "Weinberg"
-      lastPersonSelectedFirstName = "Steven"
+      lastPersonSelectedLastName = "Hitchens"
+      lastPersonSelectedFirstName = "Christopher"
     case "Pinker":
       let imageOfStevenPinker = UIImage(named: "StevenPinker")
       self.imageView.image = imageOfStevenPinker
-      lastPersonSelectedLastName = "Weinberg"
+      lastPersonSelectedLastName = "Pinker"
       lastPersonSelectedFirstName = "Steven"
     case "Price":
       let imageOfGRPrice = UIImage(named: "GRPrice")
       self.imageView.image = imageOfGRPrice
-      lastPersonSelectedLastName = "Weinberg"
-      lastPersonSelectedFirstName = "Steven"
+      lastPersonSelectedLastName = "Price"
+      lastPersonSelectedFirstName = "George"
     case "Galvon":
       let imageOfDennisGalvon = UIImage(named: "DennisGalvon")
       self.imageView.image = imageOfDennisGalvon
-      lastPersonSelectedLastName = "Weinberg"
-      lastPersonSelectedFirstName = "Steven"
+      lastPersonSelectedLastName = "Galvon"
+      lastPersonSelectedFirstName = "Dennis"
     case "Baxter":
       let imageOfSBaxter = UIImage(named: "SBaxter")
       self.imageView.image = imageOfSBaxter
-      lastPersonSelectedLastName = "Weinberg"
-      lastPersonSelectedFirstName = "Steven"
+      lastPersonSelectedLastName = "Baxter"
+      lastPersonSelectedFirstName = "Stephen"
     case "Couple":
       let imageOfRickLooksHappy = UIImage(named: "RickLooksHappy")
       self.imageView.image = imageOfRickLooksHappy
-      lastPersonSelectedLastName = "Weinberg"
-      lastPersonSelectedFirstName = "Steven"
+      lastPersonSelectedLastName = "Couple"
+      lastPersonSelectedFirstName = "Cute"
     case "Heinlein":
       let imageOfRAHeinlein = UIImage(named: "RAHeinlein")
       self.imageView.image = imageOfRAHeinlein
-      lastPersonSelectedLastName = "Weinberg"
-      lastPersonSelectedFirstName = "Steven"
+      lastPersonSelectedLastName = "Heinlein"
+      lastPersonSelectedFirstName = "Robert"
     case "McClure":
       let imageOfMMcClure = UIImage(named: "MMcClure")
       self.imageView.image = imageOfMMcClure
-      lastPersonSelectedLastName = "Weinberg"
-      lastPersonSelectedFirstName = "Steven"
+      lastPersonSelectedLastName = "McClure"
+      lastPersonSelectedFirstName = "Matthew"
     case "Collins":
       let imageOfFCollins = UIImage(named: "FCollins")
       self.imageView.image = imageOfFCollins
-      lastPersonSelectedLastName = "Weinberg"
-      lastPersonSelectedFirstName = "Steven"
+      lastPersonSelectedLastName = "Collins"
+      lastPersonSelectedFirstName = "Francis"
     case "Turing":
       let imageOfAlanTuring = UIImage(named: "AlanTuring")
       self.imageView.image = imageOfAlanTuring
-      lastPersonSelectedLastName = "Weinberg"
-      lastPersonSelectedFirstName = "Steven"
+      lastPersonSelectedLastName = "Turing"
+      lastPersonSelectedFirstName = "Alan"
     case "Snow":
       let imageOfAuroraSnow = UIImage(named: "AuroraSnow")
       self.imageView.image = imageOfAuroraSnow
-      lastPersonSelectedLastName = "Weinberg"
-      lastPersonSelectedFirstName = "Steven"
+      lastPersonSelectedLastName = "Snow"
+      lastPersonSelectedFirstName = "Aurora"
     default:
       break
     }
