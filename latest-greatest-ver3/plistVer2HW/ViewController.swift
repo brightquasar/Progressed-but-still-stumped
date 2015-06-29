@@ -1,5 +1,5 @@
 //  ViewController.swift
-//  FinalProjectVer1
+//  FinalVer4
 //
 //  Created by Richard H Woolley on 6/22/15.
 //  Copyright (c) 2015 Bright Quasar Software, R.Woolley.
@@ -44,133 +44,128 @@ class ViewController: UIViewController, UITableViewDataSource {
       peopleObjects = NSArray(contentsOfFile: peoplePath) as? [[String: String]] {
         // loop through the data from the plist (an array of dictionaries)
         for object in peopleObjects {
-          if let firstName = object["FirstName"], lastName = object["LastName"], imageName = object["image"] {
+          if let firstName = object["FirstName"], lastName = object["LastName"], title = object["Title"], imageName = object["image"] {
             switch imageName {
             case "me":
               let imageOfme = UIImage(named: "me")
-              let person = Person(first: firstName, last: lastName, imageStringName: "me", AnImage: imageOfme!)
+              let person = Person(first: firstName, last: lastName, sanity: title, imageStringName: "me", AnImage: imageOfme!)
               self.people.append(person)
             case "NeilTyson":
               let imageOfHe = UIImage(named: "NeilTyson")
-              let person = Person(first: firstName, last: lastName, imageStringName: "NeilTyson", AnImage: imageOfHe!)
+              let person = Person(first: firstName, last: lastName, sanity: title, imageStringName: "NeilTyson", AnImage: imageOfHe!)
               self.people.append(person)
             case "carlSagan":
               let imageOfHe = UIImage(named: "carlSagan")
-              let person = Person(first: firstName, last: lastName, imageStringName: "carlSagan", AnImage: imageOfHe!)
+              let person = Person(first: firstName, last: lastName, sanity: title, imageStringName: "carlSagan", AnImage: imageOfHe!)
               self.people.append(person)
             case "VictorStenger":
               let imageOfHe = UIImage(named: "VictorStenger")
-              let person = Person(first: firstName, last: lastName, imageStringName: "VictorStenger", AnImage: imageOfHe!)
+              let person = Person(first: firstName, last: lastName, sanity: title, imageStringName: "VictorStenger", AnImage: imageOfHe!)
               self.people.append(person)
             case "ErwinS":
               let imageOfHe = UIImage(named: "ErwinS")
-              let person = Person(first: firstName, last: lastName, imageStringName: "ErwinS", AnImage: imageOfHe!)
+              let person = Person(first: firstName, last: lastName, sanity: title, imageStringName: "ErwinS", AnImage: imageOfHe!)
               self.people.append(person)
             case "FransisCrick":
               let imageOfHe = UIImage(named: "FransisCrick")
-              let person = Person(first: firstName, last: lastName, imageStringName: "FransisCrick", AnImage: imageOfHe!)
+              let person = Person(first: firstName, last: lastName, sanity: title, imageStringName: "FransisCrick", AnImage: imageOfHe!)
               self.people.append(person)
             case "JamesWatson":
               let imageOfHe = UIImage(named: "JamesWatson")
-              let person = Person(first: firstName, last: lastName, imageStringName: "JamesWatson", AnImage: imageOfHe!)
+              let person = Person(first: firstName, last: lastName, sanity: title, imageStringName: "JamesWatson", AnImage: imageOfHe!)
               self.people.append(person)
             case "RichardDawkins":
               let imageOfHe = UIImage(named: "RichardDawkins")
-              let person = Person(first: firstName, last: lastName, imageStringName: "RichardDawkins", AnImage: imageOfHe!)
+              let person = Person(first: firstName, last: lastName, sanity: title, imageStringName: "RichardDawkins", AnImage: imageOfHe!)
               self.people.append(person)
             case "RichardFeynman":
               let imageOfHe = UIImage(named: "RichardFeynman")
-              let person = Person(first: firstName, last: lastName, imageStringName: "RichardFeynman", AnImage: imageOfHe!)
+              let person = Person(first: firstName, last: lastName, sanity: title, imageStringName: "RichardFeynman", AnImage: imageOfHe!)
               self.people.append(person)
             case "StevenWeinberg":
               let imageOfHe = UIImage(named: "StevenWeinberg")
-              let person = Person(first: firstName, last: lastName, imageStringName: "StevenWeinberg", AnImage: imageOfHe!)
+              let person = Person(first: firstName, last: lastName, sanity: title, imageStringName: "StevenWeinberg", AnImage: imageOfHe!)
               self.people.append(person)
-
-
-/*          Xcode chokes on some thing in the block below.
-
             case "IsaacAsimov":
               let imageOfHe = UIImage(named: "IsaacAsimov")
-              let person = Person(first: firstName, last: lastName, imageStringName: "IsaacAsimov", AnImage: imageOfHe!)
+              let person = Person(first: firstName, last: lastName, sanity: title, imageStringName: "IsaacAsimov", AnImage: imageOfHe!)
               self.people.append(person)
-            case "PaulDirac":
-              let imageOfHe = UIImage(named: "PaulDirac")
-              let person = Person(first: firstName, last: lastName, imageStringName: "PaulDirac", AnImage: imageOfHe!)
+            case "PualDirac":
+              let imageOfHe = UIImage(named: "PualDirac")
+              let person = Person(first: firstName, last: lastName, sanity: title, imageStringName: "PaulDirac", AnImage: imageOfHe!)
               self.people.append(person)
             case "PaulErdos":
               let imageOfHe = UIImage(named: "PaulErdos")
-              let person = Person(first: firstName, last: lastName, imageStringName: "PaulErdos", AnImage: imageOfHe!)
+              let person = Person(first: firstName, last: lastName, sanity: title, imageStringName: "PaulErdos", AnImage: imageOfHe!)
               self.people.append(person)
             case "RobertPrice":
               let imageOfHe = UIImage(named: "RobertPrice")
-              let person = Person(first: firstName, last: lastName, imageStringName: "RobertPrice", AnImage: imageOfHe!)
+              let person = Person(first: firstName, last: lastName, sanity: title, imageStringName: "RobertPrice", AnImage: imageOfHe!)
               self.people.append(person)
             case "StevenGibson":
               let imageOfHe = UIImage(named: "StevenGibson")
-              let person = Person(first: firstName, last: lastName, imageStringName: "StevenGibson", AnImage: imageOfHe!)
+              let person = Person(first: firstName, last: lastName, sanity: title, imageStringName: "StevenGibson", AnImage: imageOfHe!)
               self.people.append(person)
             case "RandiTheGreat":
               let imageOfHe = UIImage(named: "RandiTheGreat")
-              let person = Person(first: firstName, last: lastName, imageStringName: "RandiTheGreat", AnImage: imageOfHe!)
+              let person = Person(first: firstName, last: lastName, sanity: title, imageStringName: "RandiTheGreat", AnImage: imageOfHe!)
               self.people.append(person)
             case "AubreyDNJdeGrey":
               let imageOfHe = UIImage(named: "AubreyDNJdeGrey")
-              let person = Person(first: firstName, last: lastName, imageStringName: "AubreyDNJdeGrey", AnImage: imageOfHe!)
+              let person = Person(first: firstName, last: lastName, sanity: title, imageStringName: "AubreyDNJdeGrey", AnImage: imageOfHe!)
               self.people.append(person)
             case "DanBarker":
               let imageOfHe = UIImage(named: "DanBarker")
-              let person = Person(first: firstName, last: lastName, imageStringName: "DanBarker", AnImage: imageOfHe!)
+              let person = Person(first: firstName, last: lastName, sanity: title, imageStringName: "DanBarker", AnImage: imageOfHe!)
               self.people.append(person)
             case "JFresco":
               let imageOfHe = UIImage(named: "JFresco")
-              let person = Person(first: firstName, last: lastName, imageStringName: "JFresco", AnImage: imageOfHe!)
+              let person = Person(first: firstName, last: lastName, sanity: title, imageStringName: "JFresco", AnImage: imageOfHe!)
               self.people.append(person)
             case "CHitchens":
               let imageOfHe = UIImage(named: "CHitchens")
-              let person = Person(first: firstName, last: lastName, imageStringName: "CHitchens", AnImage: imageOfHe!)
+              let person = Person(first: firstName, last: lastName, sanity: title, imageStringName: "CHitchens", AnImage: imageOfHe!)
               self.people.append(person)
             case "StevenPinker":
               let imageOfHe = UIImage(named: "StevenPinker")
-              let person = Person(first: firstName, last: lastName, imageStringName: "StevenPinker", AnImage: imageOfHe!)
+              let person = Person(first: firstName, last: lastName, sanity: title, imageStringName: "StevenPinker", AnImage: imageOfHe!)
               self.people.append(person)
             case "GRPrice":
               let imageOfHe = UIImage(named: "GRPrice")
-              let person = Person(first: firstName, last: lastName, imageStringName: "GRPrice", AnImage: imageOfHe!)
+              let person = Person(first: firstName, last: lastName, sanity: title, imageStringName: "GRPrice", AnImage: imageOfHe!)
               self.people.append(person)
             case "DennisGalvon":
               let imageOfHe = UIImage(named: "DennisGalvon")
-              let person = Person(first: firstName, last: lastName, imageStringName: "DennisGalvon", AnImage: imageOfHe!)
+              let person = Person(first: firstName, last: lastName, sanity: title, imageStringName: "DennisGalvon", AnImage: imageOfHe!)
               self.people.append(person)
             case "SBaxter":
               let imageOfHe = UIImage(named: "SBaxter")
-              let person = Person(first: firstName, last: lastName, imageStringName: "SBaxter", AnImage: imageOfHe!)
+              let person = Person(first: firstName, last: lastName, sanity: title, imageStringName: "SBaxter", AnImage: imageOfHe!)
               self.people.append(person)
             case "RickLooksHappy":
               let imageOfHe = UIImage(named: "RickLooksHappy")
-              let person = Person(first: firstName, last: lastName, imageStringName: "RickLooksHappy", AnImage: imageOfHe!)
+              let person = Person(first: firstName, last: lastName, sanity: title, imageStringName: "RickLooksHappy", AnImage: imageOfHe!)
               self.people.append(person)
             case "RAHeinlein":
               let imageOfHe = UIImage(named: "RAHeinlein")
-              let person = Person(first: firstName, last: lastName, imageStringName: "RAHeinlein", AnImage: imageOfHe!)
+              let person = Person(first: firstName, last: lastName, sanity: title, imageStringName: "RAHeinlein", AnImage: imageOfHe!)
               self.people.append(person)
             case "MMcClure":
               let imageOfHe = UIImage(named: "MMcClure")
-              let person = Person(first: firstName, last: lastName, imageStringName: "MMcClure", AnImage: imageOfHe!)
+              let person = Person(first: firstName, last: lastName, sanity: title, imageStringName: "MMcClure", AnImage: imageOfHe!)
               self.people.append(person)
             case "FCollins":
               let imageOfHe = UIImage(named: "FCollins")
-              let person = Person(first: firstName, last: lastName, imageStringName: "FCollins", AnImage: imageOfHe!)
+              let person = Person(first: firstName, last: lastName, sanity: title, imageStringName: "FCollins", AnImage: imageOfHe!)
               self.people.append(person)
             case "AlanTuring":
               let imageOfHe = UIImage(named: "AlanTuring")
-              let person = Person(first: firstName, last: lastName, imageStringName: "AlanTuring", AnImage: imageOfHe!)
+              let person = Person(first: firstName, last: lastName, sanity: title, imageStringName: "AlanTuring", AnImage: imageOfHe!)
               self.people.append(person)
             case "AuroraSnow":
               let imageOfHe = UIImage(named: "AuroraSnow")
-              let person = Person(first: firstName, last: lastName, imageStringName: "AuroraSnow", AnImage: imageOfHe!)
+              let person = Person(first: firstName, last: lastName, sanity: title, imageStringName: "AuroraSnow", AnImage: imageOfHe!)
               self.people.append(person)
-*/
             default:
               break
             } // switch
@@ -211,6 +206,7 @@ class ViewController: UIViewController, UITableViewDataSource {
 
     cell.firstNameLabel.text = personToDisplay.firstName   // Set the names on the cell.
     cell.lastNameLabel.text = personToDisplay.lastName    // These "always" work.
+    cell.charTitle.text = personToDisplay.title 
 
     let userDefaults = NSUserDefaults.standardUserDefaults()  // "continued" below, userDefaults.objectForKey("LastSelected") ...
 

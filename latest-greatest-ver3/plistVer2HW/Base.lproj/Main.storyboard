@@ -18,57 +18,76 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="74" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="4Z2-br-2ra">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="81" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="4Z2-br-2ra">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="74" id="dWg-kH-KtA" customClass="PersonCell" customModule="plistVer2HW" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="81" id="dWg-kH-KtA" customClass="PersonCell" customModule="plistVer2HW" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dWg-kH-KtA" id="w8s-Qs-Upo">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NgM-tH-GEo">
-                                                    <rect key="frame" x="125" y="26" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="79" y="16" width="37.5" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RickLooksHappy" translatesAutoresizingMaskIntoConstraints="NO" id="PAA-3o-Uwb">
-                                                    <rect key="frame" x="24" y="6" width="55" height="62"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RickLooksHappy" translatesAutoresizingMaskIntoConstraints="NO" id="PAA-3o-Uwb">
+                                                    <rect key="frame" x="8" y="5" width="63" height="70"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="62" id="5eo-vJ-cZv"/>
-                                                        <constraint firstAttribute="width" constant="55" id="cK4-Zd-UUl"/>
+                                                        <constraint firstAttribute="width" constant="63" id="1Z6-Fn-9zG"/>
+                                                        <constraint firstAttribute="height" constant="70" id="wcv-m7-X1v"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSe-ud-la2">
-                                                    <rect key="frame" x="175" y="26" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="124" y="16" width="37.5" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Char:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbF-nP-iyo">
+                                                    <rect key="frame" x="91" y="42" width="37.5" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am not sure how long" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ia2-MT-kXa">
+                                                    <rect key="frame" x="140.5" y="42" width="156.5" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="NgM-tH-GEo" firstAttribute="top" secondItem="WSe-ud-la2" secondAttribute="top" id="8el-oI-1pV"/>
+                                                <constraint firstAttribute="centerY" secondItem="PAA-3o-Uwb" secondAttribute="centerY" id="9Z1-5T-R9X"/>
+                                                <constraint firstItem="WSe-ud-la2" firstAttribute="top" secondItem="w8s-Qs-Upo" secondAttribute="topMargin" constant="8" id="A5M-i9-iYT"/>
                                                 <constraint firstItem="NgM-tH-GEo" firstAttribute="leading" secondItem="PAA-3o-Uwb" secondAttribute="trailing" constant="30" id="APs-qH-QEV"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="PAA-3o-Uwb" secondAttribute="bottom" constant="-2.5" id="B5U-xX-4xJ"/>
                                                 <constraint firstItem="WSe-ud-la2" firstAttribute="leading" secondItem="NgM-tH-GEo" secondAttribute="trailing" constant="8" id="ChM-oY-vJw"/>
+                                                <constraint firstItem="PAA-3o-Uwb" firstAttribute="leading" secondItem="w8s-Qs-Upo" secondAttribute="leadingMargin" id="Cp7-Dd-tmU"/>
                                                 <constraint firstItem="NgM-tH-GEo" firstAttribute="baseline" secondItem="WSe-ud-la2" secondAttribute="baseline" id="GF5-uS-Npv"/>
-                                                <constraint firstItem="PAA-3o-Uwb" firstAttribute="leading" secondItem="w8s-Qs-Upo" secondAttribute="leadingMargin" constant="16" id="MHT-dn-30f"/>
-                                                <constraint firstItem="WSe-ud-la2" firstAttribute="leading" secondItem="NgM-tH-GEo" secondAttribute="trailing" constant="8" id="Mg6-Fv-BfI"/>
+                                                <constraint firstItem="WSe-ud-la2" firstAttribute="leading" secondItem="NgM-tH-GEo" secondAttribute="trailing" constant="8" id="New-fl-vu0"/>
+                                                <constraint firstItem="ia2-MT-kXa" firstAttribute="leading" secondItem="nbF-nP-iyo" secondAttribute="trailing" constant="12" id="OyO-9L-hWK"/>
                                                 <constraint firstItem="PAA-3o-Uwb" firstAttribute="trailing" secondItem="w8s-Qs-Upo" secondAttribute="trailingMargin" id="QvU-sZ-fP6"/>
-                                                <constraint firstAttribute="centerY" secondItem="PAA-3o-Uwb" secondAttribute="centerY" id="R59-Mh-yMe"/>
                                                 <constraint firstItem="WSe-ud-la2" firstAttribute="firstBaseline" secondItem="NgM-tH-GEo" secondAttribute="firstBaseline" id="SbG-mx-f73"/>
                                                 <constraint firstItem="NgM-tH-GEo" firstAttribute="leading" secondItem="w8s-Qs-Upo" secondAttribute="leading" constant="87" id="UZY-6P-xUg"/>
-                                                <constraint firstItem="NgM-tH-GEo" firstAttribute="leading" secondItem="PAA-3o-Uwb" secondAttribute="trailing" constant="46" id="Vc8-df-BwQ"/>
                                                 <constraint firstItem="WSe-ud-la2" firstAttribute="leading" secondItem="NgM-tH-GEo" secondAttribute="trailing" constant="8" symbolic="YES" id="Wlm-uU-ljt"/>
+                                                <constraint firstItem="nbF-nP-iyo" firstAttribute="top" secondItem="WSe-ud-la2" secondAttribute="bottom" constant="8" id="Zx1-Sx-dJ9"/>
+                                                <constraint firstItem="NgM-tH-GEo" firstAttribute="leading" secondItem="PAA-3o-Uwb" secondAttribute="trailing" constant="8" id="bv5-HK-GWV"/>
                                                 <constraint firstItem="NgM-tH-GEo" firstAttribute="top" secondItem="WSe-ud-la2" secondAttribute="top" id="cFP-GC-8F6"/>
                                                 <constraint firstItem="PAA-3o-Uwb" firstAttribute="trailing" secondItem="w8s-Qs-Upo" secondAttribute="trailingMargin" id="dbz-JF-QCe"/>
-                                                <constraint firstAttribute="centerY" secondItem="NgM-tH-GEo" secondAttribute="centerY" id="fHT-n3-Tg9"/>
+                                                <constraint firstItem="ia2-MT-kXa" firstAttribute="top" secondItem="WSe-ud-la2" secondAttribute="bottom" constant="8" id="gQ3-MZ-fk3"/>
                                                 <constraint firstItem="PAA-3o-Uwb" firstAttribute="top" secondItem="w8s-Qs-Upo" secondAttribute="topMargin" constant="-2" id="gvC-4v-Z9i"/>
                                                 <constraint firstItem="NgM-tH-GEo" firstAttribute="leading" secondItem="PAA-3o-Uwb" secondAttribute="trailing" constant="46" id="hSZ-sT-zlr"/>
                                                 <constraint firstItem="NgM-tH-GEo" firstAttribute="top" secondItem="w8s-Qs-Upo" secondAttribute="topMargin" constant="18" id="i5T-qh-RZb"/>
+                                                <constraint firstItem="NgM-tH-GEo" firstAttribute="top" secondItem="w8s-Qs-Upo" secondAttribute="topMargin" constant="8" id="lMf-co-ELJ"/>
+                                                <constraint firstItem="NgM-tH-GEo" firstAttribute="top" secondItem="WSe-ud-la2" secondAttribute="top" id="mKC-eu-ZEe"/>
                                                 <constraint firstItem="WSe-ud-la2" firstAttribute="centerY" secondItem="w8s-Qs-Upo" secondAttribute="centerY" id="qLl-iG-ken"/>
+                                                <constraint firstItem="nbF-nP-iyo" firstAttribute="top" secondItem="ia2-MT-kXa" secondAttribute="top" id="qhu-x0-Kod"/>
+                                                <constraint firstItem="nbF-nP-iyo" firstAttribute="leading" secondItem="PAA-3o-Uwb" secondAttribute="trailing" constant="20" id="qwe-X1-Y2T"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -80,6 +99,7 @@
                                                     <exclude reference="APs-qH-QEV"/>
                                                     <exclude reference="GF5-uS-Npv"/>
                                                     <exclude reference="UZY-6P-xUg"/>
+                                                    <exclude reference="cFP-GC-8F6"/>
                                                     <exclude reference="hSZ-sT-zlr"/>
                                                     <exclude reference="i5T-qh-RZb"/>
                                                     <exclude reference="ChM-oY-vJw"/>
@@ -90,6 +110,7 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="charTitle" destination="ia2-MT-kXa" id="Pkq-Nw-b9N"/>
                                             <outlet property="firstNameLabel" destination="NgM-tH-GEo" id="JdS-bJ-vds"/>
                                             <outlet property="lastNameLabel" destination="WSe-ud-la2" id="hb4-W5-wSo"/>
                                             <outlet property="personImageView" destination="PAA-3o-Uwb" id="Lhw-wN-PsQ"/>
