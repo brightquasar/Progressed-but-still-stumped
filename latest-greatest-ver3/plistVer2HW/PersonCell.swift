@@ -1,5 +1,5 @@
 //  PersonCell.swift
-//  FinalVer4
+//  FinalVer5
 //
 //  Created by Richard H Woolley on 6/22/15.
 //  Copyright (c) 2015 Bright Quasar Software, R.Woolley.
@@ -15,12 +15,12 @@ public class PersonCell: UITableViewCell {  // deque of cell is cast to this typ
 
 
 
-    override public func awakeFromNib() {  // I am in the dark here, this could be the problem ???????????????????????
+    override public func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override public func setSelected(selected: Bool, animated: Bool) {  // not fully aware of this func, probably ok???
+    override public func setSelected(selected: Bool, animated: Bool) {  
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
     }

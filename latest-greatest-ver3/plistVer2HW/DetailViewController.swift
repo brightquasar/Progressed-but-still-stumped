@@ -1,36 +1,36 @@
 //  DetailViewController.swift
-//  FinalVer4
+//  FinalVer5
 //
 //  Created by Richard H Woolley on 6/22/15.
 //  Copyright (c) 2015 Bright Quasar Software, R.Woolley.
 
 import UIKit
 
-public class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
   @IBOutlet weak var firstNameTextField: UITextField!
   @IBOutlet weak var lastNameTextField: UITextField!
-  @IBOutlet weak var imageView: UIImageView!          // These 3 outlets are to the storyboard detail view. 
+  @IBOutlet weak var imageView: UIImageView!
 
-  @IBOutlet weak var cameraMissingAlert: UILabel!  // this is now used to display a gaming message.
+  @IBOutlet weak var cameraMissingAlert: UILabel! // Is now used to display gaming messages, too lazy to rename it.
 
   var selectedPerson : Person!  // Will "initialize" this through UITextFieldDelegate protocol??
 
-  public var lastPersonSelectedLastName = ""  // Would need to, at least, persist this one var.
-  public var lastPersonSelectedFirstName = ""  // Would need to, at least, persist this one var.
+  var lastPersonSelectedLastName = ""
+  var lastPersonSelectedFirstName = ""
 
   var imageWhichMatchesSelectedPerson = ""
 
 
            // -------------------------------------
 
-  override public func viewDidLoad() {
+  override func viewDidLoad() {
     super.viewDidLoad()
 
     cameraMissingAlert.textColor = UIColor.blueColor()
     self.cameraMissingAlert.text = "Guess this man's name"
 
-
     imageWhichMatchesSelectedPerson = setupTextFields(1)  // Fun with overloading:]
+
     switch imageWhichMatchesSelectedPerson {
     case "Woolley":
       let imageOfme = UIImage(named: "me")
@@ -190,80 +190,24 @@ public class DetailViewController: UIViewController, UITextFieldDelegate, UIImag
 
   }
 
-
-// Some silliness.
-  func lastPersonSelectedLastNameMember() {
-    var lastPersonSelectedLastName = "Tyson"
-    func lastName() -> String {
-       return "Tyson"
-    }
-  }
-
-
 // Fun with overloading:]
   func setupTextFields(shortVer: Int) -> String {
     self.lastNameTextField.delegate = self
     return self.selectedPerson.lastName
   }
-
   func setupTextFields() {
     self.firstNameTextField.delegate = self
     self.lastNameTextField.delegate = self
     self.firstNameTextField.tag = 0
     self.lastNameTextField.tag = 1
-    //self.firstNameTextField.text = self.selectedPerson.firstName  // I was definately NOT going to use these two, because I
-    //self.lastNameTextField.text = self.selectedPerson.lastName   // ... intended to make a guessing game of things. 
   }
 
-  public func textFieldShouldReturn(textField: UITextField) -> Bool {
+   func textFieldShouldReturn(textField: UITextField) -> Bool {
     textField.resignFirstResponder()  // dismiss keyboard
-
-
-
-
-// Attempting to restore the detail image, late at night.
-
-    switch lastPersonSelectedLastName {
-    case "Woolley":
-      let imageOfme = UIImage(named: "me")
-      self.imageView.image = imageOfme
-    case "Tyson":
-      let imageOfTyson = UIImage(named: "NeilTyson")
-      self.imageView.image = imageOfTyson
-      lastPersonSelectedLastName = "Tyson"
-    case "Sagan":
-      let imageOfSagan = UIImage(named: "carlSagan")
-      self.imageView.image = imageOfSagan
-      lastPersonSelectedLastName = "Sagan"
-    case "Stenger":
-      let imageOfVictorStenger = UIImage(named: "VictorStenger")
-      self.imageView.image = imageOfVictorStenger
-    case "Schrodinger":
-      let imageOfErwinS = UIImage(named: "ErwinS")
-      self.imageView.image = imageOfErwinS
-    case "Crick":
-      let imageOfFransisCrick = UIImage(named: "FransisCrick")
-      self.imageView.image = imageOfFransisCrick
-    case "Watson":
-      let imageOfJamesWatson = UIImage(named: "JamesWatson")
-      self.imageView.image = imageOfJamesWatson
-    case "Dawkins":
-      let imageOfRichardDawkins = UIImage(named: "RichardDawkins")
-      self.imageView.image = imageOfRichardDawkins
-    case "Feynman":
-      let imageOfRichardFeynman = UIImage(named: "RichardFeynman")
-      self.imageView.image = imageOfRichardFeynman
-    case "Weinberg":
-      let imageOfStevenWeinberg = UIImage(named: "StevenWeinberg")
-      self.imageView.image = imageOfStevenWeinberg
-    default:
-      break
-    }
-
     return false // true or false
   }
 
-  public func textFieldDidEndEditing(textField: UITextField) {  // Used more-clear switch to asign per tags.
+   func textFieldDidEndEditing(textField: UITextField) {  // Used more-clear switch to asign per tags.
     switch textField.tag {
     case 0:
       self.selectedPerson.firstName = textField.text
@@ -303,46 +247,6 @@ public class DetailViewController: UIViewController, UITextFieldDelegate, UIImag
         }
       }
     }
-
-
-
-// Still trying.
-
-    switch lastPersonSelectedLastName {
-    case "Woolley":
-      let imageOfme = UIImage(named: "me")
-      self.imageView.image = imageOfme
-    case "Tyson":
-      let imageOfTyson = UIImage(named: "NeilTyson")
-      self.imageView.image = imageOfTyson
-    case "Sagan":  // This should have fixed the bug, at least on Sagan. Per the above var lastPersonSelectedLastName.
-      let imageOfSagan = UIImage(named: "carlSagan")
-      self.imageView.image = imageOfSagan
-    case "Stenger":
-      let imageOfVictorStenger = UIImage(named: "VictorStenger")
-      self.imageView.image = imageOfVictorStenger
-    case "Schrodinger":
-      let imageOfErwinS = UIImage(named: "ErwinS")
-      self.imageView.image = imageOfErwinS
-    case "Crick":
-      let imageOfFransisCrick = UIImage(named: "FransisCrick")
-      self.imageView.image = imageOfFransisCrick
-    case "Watson":
-      let imageOfJamesWatson = UIImage(named: "JamesWatson")
-      self.imageView.image = imageOfJamesWatson
-    case "Dawkins":
-      let imageOfRichardDawkins = UIImage(named: "RichardDawkins")
-      self.imageView.image = imageOfRichardDawkins
-    case "Feynman":
-      let imageOfRichardFeynman = UIImage(named: "RichardFeynman")
-      self.imageView.image = imageOfRichardFeynman
-    case "Weinberg":
-      let imageOfStevenWeinberg = UIImage(named: "StevenWeinberg")
-      self.imageView.image = imageOfStevenWeinberg
-    default:
-      break
-    }
-
   }
 
 
@@ -357,18 +261,13 @@ public class DetailViewController: UIViewController, UITextFieldDelegate, UIImag
 
     if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
       self.presentViewController(imagePickerController, animated: true, completion: nil)
+    } else {  // Warn the user of the missing photos (highly unlikely, nearly imposible)
+        self.cameraMissingAlert.text = "No Photos found"
     }
-/*
-    if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
-      self.presentViewController(imagePickerController, animated: true, completion: nil)
-    } else {  // Warn the user of the missing camera in both the sim and the really-old-iPod-touch
-      self.cameraMissingAlert.text = "No camera found"
-    }
-*/
   }
 
-  // Added optional binding.
-  public func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject: AnyObject]) {
+                              // Added optional binding.
+   func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject: AnyObject]) {
     if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
       self.imageView.image = image
       self.selectedPerson.actualImage = image  // This adds the image from the PhotoLibrary to the selectedPerson: Person!  up top.

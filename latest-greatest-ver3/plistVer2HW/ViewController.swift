@@ -1,12 +1,10 @@
 //  ViewController.swift
-//  FinalVer4
+//  FinalVer5
 //
 //  Created by Richard H Woolley on 6/22/15.
 //  Copyright (c) 2015 Bright Quasar Software, R.Woolley.
 
 import UIKit
-//import DetailViewController  // I made it all public, but that does not make it a module:(
-
 
 class ViewController: UIViewController, UITableViewDataSource {
   @IBOutlet weak var tableView: UITableView!
@@ -16,15 +14,8 @@ class ViewController: UIViewController, UITableViewDataSource {
 
           // --------------------------------
 
-
-// I see no reason why the following two functions would not save and retrieve my images. As they do my text.
-// ... And yet, re-running the app the second time, after an un-install, leaves my cells sans images.
-// Even when I hard-code an image for the Cell in storyboard, so, they must be getting over-written??
-// BUT -- the archive gives me no images, EXCEPT THOSE STORED FROM PHOTO ALBUM, those ARE reloaded just fine??
-
 // Firstly, to get any of this to run AT ALL, I was forced to hand-code from scratch my entire People.plist file.
 // ====  Xcode bites! ===========================================================================================
-
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -36,15 +27,18 @@ class ViewController: UIViewController, UITableViewDataSource {
       }
     self.tableView.dataSource = self
   }
-// -- end of viewDidLoad()
+  // -- end of viewDidLoad()
 
 
   func loadPeopleFromPlist() {
     if let peoplePath = NSBundle.mainBundle().pathForResource("People", ofType: "plist"),
       peopleObjects = NSArray(contentsOfFile: peoplePath) as? [[String: String]] {
+
         // loop through the data from the plist (an array of dictionaries)
         for object in peopleObjects {
+
           if let firstName = object["FirstName"], lastName = object["LastName"], title = object["Title"], imageName = object["image"] {
+
             switch imageName {
             case "me":
               let imageOfme = UIImage(named: "me")
@@ -164,7 +158,8 @@ class ViewController: UIViewController, UITableViewDataSource {
               self.people.append(person)
             case "AuroraSnow":
               let imageOfHe = UIImage(named: "AuroraSnow")
-              let person = Person(first: firstName, last: lastName, sanity: title, imageStringName: "AuroraSnow", AnImage: imageOfHe!)
+              //let newImageOfHe = UIImagePNGRepresentation(imageOfHe)
+              let person = Person(first: firstName, last: lastName, sanity: title, imageStringName: "AuroraSnow", AnImage: imageOfHe)
               self.people.append(person)
             default:
               break
@@ -182,8 +177,6 @@ class ViewController: UIViewController, UITableViewDataSource {
     self.tableView.reloadData()
     // Same-old short-version, finds datasource above via tableView protocol
     // ... I have yet to get the longer more efficient version to work.
-    // Mignt THAT version successfully load my images ??????????????????????
-    // ... those images which simply MUST be getting archived.
   }
 
 
@@ -193,7 +186,7 @@ class ViewController: UIViewController, UITableViewDataSource {
 
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PersonCell
-    cell.backgroundColor = UIColor.whiteColor()  // 1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1
+    cell.backgroundColor = UIColor.whiteColor()
     cell.personImageView.layer.cornerRadius = 15
     cell.personImageView.layer.masksToBounds = true;
     cell.personImageView.layer.borderWidth = 2
@@ -201,12 +194,13 @@ class ViewController: UIViewController, UITableViewDataSource {
 
     let personToDisplay = self.people[indexPath.row]
 
-    // Will put-back optional binding on that next line, but not today.
-    cell.personImageView.image = personToDisplay.actualImage!  // Doubt this ever, works as intented.
+    if let tempI = personToDisplay.actualImage {
+      cell.personImageView.image = tempI
+    }
 
-    cell.firstNameLabel.text = personToDisplay.firstName   // Set the names on the cell.
-    cell.lastNameLabel.text = personToDisplay.lastName    // These "always" work.
-    cell.charTitle.text = personToDisplay.title 
+    cell.firstNameLabel.text = personToDisplay.firstName     // Set the names on the cell.
+    cell.lastNameLabel.text = personToDisplay.lastName      // These three "always" work.
+    cell.charTitle.text = personToDisplay.title            //
 
     let userDefaults = NSUserDefaults.standardUserDefaults()  // "continued" below, userDefaults.objectForKey("LastSelected") ...
 
@@ -237,7 +231,7 @@ class ViewController: UIViewController, UITableViewDataSource {
   }
 */
 
-//  Sample code: (this seems to be a mess of illogically nested ... stuff, 3 in all), the above seems to be a better construct??
+//  Sample code below: (this seems to be a mess of illogically nested ... stuff, 3 in all), the above seems to be a better construct??
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "ShowDetailViewController" {
       if let detailViewController = segue.destinationViewController as? DetailViewController {
@@ -257,24 +251,6 @@ class ViewController: UIViewController, UITableViewDataSource {
           }
       }
     }
-/* But then who am I to judge, consider the following attempt:
-
-    // In the DetailViewController.swift file I tried:
-
-    func lastPersonSelectedLastNameMember() {
-      var lastPersonSelectedLastName = "Tyson"
-        func lastName() -> String {
-        return "Tyson"
-        }
-    }
-
-    // Then, in here we do:
-
-    if DetailViewController.lastPersonSelectedLastNameMember.lastName == "Tyson" {
-
-    }
-    // But Xcode says no and, is presumed to be right, this time.
-*/
 
   }
 
@@ -296,7 +272,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     return nil
   }
 
-  // The following (seems to be) a better construct. (by virtue of the use of chained optional bindings)??
+// The following (seems to be) a better construct. (by virtue of the use of chained optional bindings)??
 /*
   func loadFromArchive() -> [Person]? {
     if let archivePath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).last as? String, peopleFromArchive = NSKeyedUnarchiver.unarchiveObjectWithFile(archivePath + "/archive") as? [Person]
